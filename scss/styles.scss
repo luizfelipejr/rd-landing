@@ -1,0 +1,11 @@
+// Import Bootstrap integration
+@import "bootstrap-compass";
+@import "vendor/bootstrap/bootstrap";
+
+//Partials
+@import "partials/variables";
+@import "partials/landing-page";
+
+//Google Fonts
+@import url(http://fonts.googleapis.com/css?family=Titillium+Web:600,400);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300);
