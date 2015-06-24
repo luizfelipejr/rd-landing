@@ -11,15 +11,41 @@ html, body {
 
 body {
   font-family: $font-secondary;
-  background: url("../img/bg.jpg") top left fixed no-repeat;
-
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
 }
 
+.bg-blue {
+  //background: url("../img/bg.jpg") top left fixed no-repeat;
+  position: fixed;
+  top: 0;
+  right: 46%;
+  width: 100%;
+  min-height: 100%;
+
+  img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: auto;
+    min-height: 800px;
+  }
+}
+
 .wrapper {
-  margin-top: $m-lg;
-  min-width: 1200px;
+  margin-top: 4%;
+  //min-width: 1200px;
+}
+
+.left {
+  @include make-xs-column(12);
+  @include make-md-column(6);
+}
+
+.right {
+  @include make-xs-column(12);
+  @include make-md-column(5);
+  @include make-md-column-offset(1);
 }
 
 .logo {
@@ -63,13 +89,6 @@ body {
   .ebook-preview {
     margin-top: $m-md;
   }
-}
-
-.left,
-.right {
-  @include make-xs-column(12, $gutter: 20px);
-  @include make-sm-column(6, $gutter: 20px);
-  @include make-md-column(6, $gutter: 20px);
 }
 
 .feature {
@@ -138,5 +157,25 @@ body {
   }
   .form-group {
     margin: $m-xs 0 $m-xs 0;
+  }
+}
+
+// Need refactory
+
+.img-responsive {
+  margin: 0 auto;
+}
+
+@media only screen and (max-width: 992px) {
+  .wrapper {
+    margin-top: 0;
+  }
+  .bg-blue, .ebook-preview {
+    display: none;
+  }
+  .left {
+    background: url("../img/bg.jpg") top left fixed no-repeat;
+    padding-top: 30px;
+    padding-bottom: 50px;
   }
 }
